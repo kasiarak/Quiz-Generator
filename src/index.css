@@ -1,0 +1,13 @@
+:root {
+  background-color: rgb(46, 46, 46);
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  max-width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
