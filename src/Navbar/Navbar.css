@@ -1,0 +1,11 @@
+nav{
+    bottom: 0;
+    width: 100vw;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+}
+.navbarButtons{
+    color: white; 
+    text-decoration: none;
+}

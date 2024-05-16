@@ -1,0 +1,16 @@
+header{
+  width: 100vw;
+  height: 30vh;
+  background-color: rgb(33, 33, 33);
+}
+#heading{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 80%;
+  width: 100%;
+}
+h1{
+  color: white;
+  align-self: center;
+}
