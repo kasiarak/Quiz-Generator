@@ -7,10 +7,20 @@ header{
   display: flex;
   justify-content: center;
   text-align: center;
-  height: 80%;
+  height: 75%;
   width: 100%;
 }
 h1{
   color: white;
   align-self: center;
+  font-size: 5rem;
+  line-height: 0.8;
+}
+*{
+  font-family: 'Overpass';
+}
+@media screen and (max-width: 650px){
+  h1{
+      font-size: 4rem;
+  }
 }

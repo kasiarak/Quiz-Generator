@@ -3,13 +3,13 @@ import './Navbar.css'
 function Navbar(){
     return(
     <nav>
-       <Link className="navbarButtons"to = "/">Main Page</Link>
-        <Link className="navbarButtons"to = "/AllCategoriesQuiz">All Categories</Link>
-        <Link className="navbarButtons"to = "/BooksQuiz">Books</Link>
-        <Link className="navbarButtons"to = "/MusicQuiz">Music</Link>
-        <Link className="navbarButtons"to = "/FilmQuiz">Film</Link>
-        <Link className="navbarButtons"to = "/VideoGamesQuiz">Video Games</Link> 
-        <Link className="navbarButtons"to = "/ScienceQuiz">Science</Link> 
+       <Link id="mainPageNav"className="navbarButtons"to = "/">Main Page</Link>
+        <Link id="allCategoriesNav" className="navbarButtons"to = "/AllCategoriesQuiz">All Categories</Link>
+        <Link id="booksNav" className="navbarButtons"to = "/BooksQuiz">Books</Link>
+        <Link id="musicNav" className="navbarButtons"to = "/MusicQuiz">Music</Link>
+        <Link id="filmNav" className="navbarButtons"to = "/FilmQuiz">Film</Link>
+        <Link id="videoGamesNav" className="navbarButtons"to = "/VideoGamesQuiz">Video Games</Link> 
+        <Link id="scienceNav" className="navbarButtons"to = "/ScienceQuiz">Science</Link> 
     </nav>
     );
 }
