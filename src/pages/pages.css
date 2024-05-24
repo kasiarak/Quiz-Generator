@@ -1,5 +1,7 @@
-p{
-    color:white;
-    font-size: 2rem;
-    font-family: 'rubik';
+#container{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
