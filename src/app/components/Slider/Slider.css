@@ -11,8 +11,8 @@
 }
 h2{
     color:white;
-    font-size: 8rem;
-    line-height: 0.9;
+    font-size: 9vw;
+    line-height: 15vh;
     margin-left: 1vw;
     animation: slide 8s linear infinite;
 }

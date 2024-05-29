@@ -1,0 +1,30 @@
+#header{
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(33, 33, 33);
+    position: absolute;
+    top: 0;
+}
+#heading{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 75%;
+    width: 100%;
+}
+#headingText{
+    color: white;
+    align-self: center;
+    font-size: 5rem;
+    line-height: 0.8;
+}
+@media screen and (max-width: 650px){
+    #headingText{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-height: 650px){
+  #headingText{
+      font-size: 4rem;
+  }
+}
