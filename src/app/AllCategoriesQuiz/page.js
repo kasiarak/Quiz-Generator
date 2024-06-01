@@ -1,7 +1,6 @@
 function AllCategoriesQuiz(){
     return(
         <>
-        ddd
         </>
     );
 }

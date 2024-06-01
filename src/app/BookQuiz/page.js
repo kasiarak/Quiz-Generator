@@ -1,4 +1,27 @@
-function BooksQuizPage(){
-
+function BooksQuiz(){
+    <>
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    dcc
+    </>
 }
-export default BooksQuizPage
+export default BooksQuiz

@@ -1,6 +1,7 @@
 import {Overpass} from "next/font/google";
 import Head from "next/head";
 import Header from "./components/Header/Header";
+import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton";
 import "./globals.css";
 
 const overpass = Overpass({
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Quiz Generator</title>
       </Head>
-      <body className={overpass.className}><Header/>{children}</body>
+      <body className={overpass.className}><ScrollUpButton/><Header/>{children}</body>
     </html>
   );
 }
