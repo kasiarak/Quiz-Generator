@@ -1,27 +1,8 @@
 function BooksQuiz(){
-    <>
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    dcc
-    </>
+   return(
+    <div className="page">
+
+    </div>
+   );
 }
 export default BooksQuiz
