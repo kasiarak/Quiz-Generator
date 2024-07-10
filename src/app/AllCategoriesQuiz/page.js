@@ -4,7 +4,7 @@ import '../pages.css';
 function AllCategoriesQuiz(){
     return(
         <div className='page'>
-            <QuizSetup color="red"/>
+            <QuizSetup color="red" category="null"/>
         </div>
     );
 }
