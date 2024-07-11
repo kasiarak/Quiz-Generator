@@ -29,10 +29,25 @@ function QuizSetup(props){
             const link=`https://opentdb.com/api.php?amount=${numberOfQuestions}${props.category!=="null" ? `&category=${props.category}` : ""}`;
             const response = await fetch(link);
             const data = await response.json();
+            console.log(data.results) //gffff
             for(let i = 0; i < data.results.length; i++){
+                const answers = data.results[i].incorrect_answers;
+                answers.push(data.results[i].correct_answer);
+                let answers2 = []; 
+                for(let j = 0; j < answers.length; j++){
+                    let index = Math.floor(Math.random()*answers.length); 
+                    answers2.push(
+                        <div key={j}>
+                            <input type="radio"/>
+                            <label>{answers[index]}</label>
+                        </div>
+                    )
+                    answers.splice(index,1);
+                }
                 questions.push(
-                    <div className='question'>
-                        
+                    <div key={i} className='question'>
+                        <h3>{data.results[i].question}</h3>
+                        <div className='answers'>{answers2}</div>
                     </div>
                 );
             } 
@@ -60,7 +75,7 @@ function QuizSetup(props){
             </div>
         )}
         {quizIsCreated && <div className='quiz'>
-            QUIZ
+            {questions}
         </div>}
     </>
     );
