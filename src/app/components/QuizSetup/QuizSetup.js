@@ -25,8 +25,9 @@ function QuizSetup(props) {
     }
 
     const handleCreateQuiz = async () => {
+        setNumberOfQuestions(20); 
         try {
-            const link = `https://opentdb.com/api.php?amount=${numberOfQuestions}${props.category !== "null" ? `&category=${props.category}` : ""}`;
+            const link = `https://opentdb.com/api.php?amount=${numberOfQuestions > 20 ? 20 : numberOfQuestions}${props.category !== "null" ? `&category=${props.category}` : ""}`;
             const response = await fetch(link);
             const data = await response.json();
             console.log(data.results);
