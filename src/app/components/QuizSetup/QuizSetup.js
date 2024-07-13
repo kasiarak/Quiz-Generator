@@ -1,13 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Styles from './QuizSetup.module.css'
-import { Roboto_Mono } from "next/font/google";
 import { Overpass } from "next/font/google";
-
-const robotoMono = Roboto_Mono({
-    subsets: ['latin'],
-    weight: ['500'], 
-}); 
 
 const overpass = Overpass({
     subsets: ['latin'],
@@ -23,6 +17,12 @@ function QuizSetup(props) {
 
     const [quizIsCreated, setQuizIsCreated] = useState(false); 
     const [questions, setQuestions] = useState([]); 
+
+    function decodeHtmlEntities(text) {
+        const textArea = document.createElement('textarea');
+        textArea.innerHTML = text;
+        return textArea.value;
+    }
 
     const handleCreateQuiz = async () => {
         try {
@@ -40,8 +40,8 @@ function QuizSetup(props) {
                     </div>
                 ));
                 return (
-                    <div key={index} className={Styles.question}>
-                        <h3>{question.question}</h3>
+                    <div key={index} className={`${Styles.question} ${overpass.className}`}> 
+                        <h3>{decodeHtmlEntities(question.question)}</h3>
                         <div className={Styles.answers}>{shuffledAnswers}</div>
                     </div>
                 );
@@ -57,12 +57,12 @@ function QuizSetup(props) {
     return (
         <>
             {!quizIsCreated && (
-                <div className={`${Styles.container} ${robotoMono.className}`}>
+                <div className={`${Styles.container} ${overpass.className}`}>
                     <h3>Select the number of questions</h3>
                     <input 
                         value={numberOfQuestions} 
                         onChange={handleNumberOfQuestions}
-                        className={`${Styles.numberInput} ${robotoMono.className}`}
+                        className={`${Styles.numberInput} ${overpass.className}`}
                         type="number"
                         min={1}
                         max={20}
