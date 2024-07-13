@@ -36,7 +36,7 @@ function QuizSetup(props) {
                 const shuffledAnswers = answers.sort(() => Math.random() - 0.5).map((answer, id) => (
                     <div key={id}>
                         <input type="radio" name={`question${index}`} />
-                        <label>{answer}</label>
+                        <label>{decodeHtmlEntities(answer)}</label>
                     </div>
                 ));
                 return (
