@@ -48,6 +48,7 @@ function QuizSetup(props) {
             });
 
             setQuestions(newQuestions);
+            setBgColor('white'); 
             setQuizIsCreated(true);
         } catch (error) {
             console.error(error);
@@ -81,6 +82,12 @@ function QuizSetup(props) {
             {quizIsCreated && (
                 <div className={Styles.quiz}>
                     {questions}
+                    <button        
+                        style={{ backgroundColor: bgColor }}
+                        className={`${Styles.checkAnswersBtn} ${overpass.className}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleCreateQuiz}>CHECK ANSWERS</button>
                 </div>
             )}
         </>

@@ -39,7 +39,22 @@
     cursor: pointer;
     padding-top: 15px;
 }
-.quizbtn:hover{
+.checkAnswersBtn{
+    display: block;
+    text-align: center;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 25px;
+    font-size: 1.5rem;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    padding-top: 15px;
+    margin-bottom: 3vh;
+}
+.quizbtn:hover, .checkAnswersBtn:hover{
     color: white;
     transition: 0.3s;
 }
@@ -73,7 +88,7 @@
     margin-left: 1vw;
 }
 .answers input{
-    border-radius: 0;
+    cursor: pointer;
 }
 
 
