@@ -18,6 +18,12 @@ function QuizSetup(props) {
     const [quizIsCreated, setQuizIsCreated] = useState(false); 
     const [questions, setQuestions] = useState([]); 
 
+    const [scoreisShown, setScoreIsShown] = useState(false);
+    const [score, setScore] = useState(0); 
+
+    const [selectedAnswers, setSelectedAnswers] = useState([]);
+    const [correctAnswers, setCorrectAnswers] = useState([]); 
+ 
     function decodeHtmlEntities(text) {
         const textArea = document.createElement('textarea');
         textArea.innerHTML = text;
@@ -25,18 +31,18 @@ function QuizSetup(props) {
     }
 
     const handleCreateQuiz = async () => {
-        setNumberOfQuestions(20); 
+        if(numberOfQuestions>20) setNumberOfQuestions(20); 
         try {
             const link = `https://opentdb.com/api.php?amount=${numberOfQuestions > 20 ? 20 : numberOfQuestions}${props.category !== "null" ? `&category=${props.category}` : ""}`;
             const response = await fetch(link);
             const data = await response.json();
-            console.log(data.results);
 
             const newQuestions = data.results.map((question, index) => {
+                setCorrectAnswers(prevCorrectAnswers => ({...prevCorrectAnswers, [index]: decodeHtmlEntities(question.correct_answer)}));
                 const answers = [...question.incorrect_answers, question.correct_answer];
                 const shuffledAnswers = answers.sort(() => Math.random() - 0.5).map((answer, id) => (
                     <div key={id}>
-                        <input type="radio" name={`question${index}`} />
+                        <input onChange={e => setSelectedAnswers(prevSelectedAnswers => ({...prevSelectedAnswers, [index]: decodeHtmlEntities(e.target.value)}))} type="radio" name={`question${index}`} value={answer}/>
                         <label>{decodeHtmlEntities(answer)}</label>
                     </div>
                 ));
@@ -56,6 +62,18 @@ function QuizSetup(props) {
         }
     };
 
+    const checkAnswers = () => {
+        console.log(selectedAnswers)
+        console.log(correctAnswers)
+        for(let i = 0; i < numberOfQuestions; i++){
+            if(selectedAnswers[i] === correctAnswers[i]) setScore(score => score + 1); 
+        }
+        setScoreIsShown(true); 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
     return (
         <>
             {!quizIsCreated && (
@@ -80,15 +98,23 @@ function QuizSetup(props) {
                     </button>
                 </div>
             )}
-            {quizIsCreated && (
+            {quizIsCreated && ( 
+                <div styles={{flexDirection: 'column'}}>   
+                {scoreisShown && (<div className={Styles.score}>
+                    <div className={Styles.text}>
+                    <h3>Score</h3>
+                    <h3>{score}/{numberOfQuestions}</h3>
+                    </div>
+                </div>)}
                 <div className={Styles.quiz}>
                     {questions}
-                    <button        
+                    {!scoreisShown && <button        
                         style={{ backgroundColor: bgColor }}
                         className={`${Styles.checkAnswersBtn} ${overpass.className}`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        onClick={handleCreateQuiz}>CHECK ANSWERS</button>
+                        onClick={checkAnswers}>CHECK ANSWERS</button>}
+                </div>
                 </div>
             )}
         </>
