@@ -112,3 +112,11 @@
     padding: 1px 8px;
     border-radius: 5px;
 }
+@media screen and (max-width: 500px){
+    .question{
+        width: 340px;
+    }
+    .score{
+        width: 340px;
+    }
+}
