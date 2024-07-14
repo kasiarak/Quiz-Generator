@@ -24,6 +24,7 @@ function QuizSetup(props) {
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const [correctAnswers, setCorrectAnswers] = useState([]);
     const [answersClass, setAnswersClass] = useState({});
+    const [disabled, setDisabled] = useState(false); 
 
     function decodeHtmlEntities(text) {
         const textArea = document.createElement('textarea');
@@ -48,6 +49,7 @@ function QuizSetup(props) {
                             type="radio" 
                             name={`question${index}`} 
                             value={answer}
+                            disabled={disabled}
                         />
                         <label>{decodeHtmlEntities(answer)}</label>
                     </div>
@@ -71,7 +73,7 @@ function QuizSetup(props) {
     const checkAnswers = () => {
         let newScore = 0;
         let newAnswersClass = {};
- 
+
         for (let i = 0; i < numberOfQuestions; i++) {
             newAnswersClass[i] = {};
             for (let j = 0; j < questions[i].props.children[1].props.children.length; j++) {
@@ -86,6 +88,7 @@ function QuizSetup(props) {
         }
         setScore(newScore);
         setAnswersClass(newAnswersClass);
+        setDisabled(true); 
         setScoreIsShown(true);
         window.scrollTo({
             top: 0,
@@ -140,6 +143,7 @@ function QuizSetup(props) {
                                                     type="radio"
                                                     name={`question${index}`}
                                                     value={answer}
+                                                    disabled={disabled}
                                                     onChange={e => setSelectedAnswers(prevSelectedAnswers => ({ ...prevSelectedAnswers, [index]: decodeHtmlEntities(e.target.value) }))}
                                                 />
                                                 <label className={answersClass[index] && answersClass[index][answer]}>{decodeHtmlEntities(answer)}</label>
