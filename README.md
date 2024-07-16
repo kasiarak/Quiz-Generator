@@ -3,32 +3,27 @@
 ###
 
 <div align="center">
-  <img height="250" src=""  />
+  <img height="250" src="https://tinypic.host/images/2024/07/16/Zrzut-ekranu-2024-07-16-225647.png"  />
 </div>
 
 ###
 
 <div align="center">
-  <img height="250" src=""  />
+  <img height="250" src="https://tinypic.host/images/2024/07/17/Zrzut-ekranu-2024-07-16-230700.png"  />
 </div>
 
 ###
 
 <div align="center">
-  <img height="250" src=""  />
+  <img height="250" src="https://tinypic.host/images/2024/07/17/Zrzut-ekranu-2024-07-16-231834.png"  />
 </div>
 
 ###
 
 <div align="center">
-  <img height="250" src=""  />
+  <img height="250" src="https://tinypic.host/images/2024/07/17/Zrzut-ekranu-2024-07-16-233002.png"  />
 </div>
 
-###
-
-<div align="center">
-  <img height="250" src=""  />
-</div>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
